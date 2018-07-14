@@ -89,7 +89,7 @@ type PluginInfo struct {
 type AckMsg struct{}
 
 type EventMsg struct {
-	Plugindata PluginData
+	PluginData PluginData `json:"plugindata"`
 	Jsep       map[string]interface{}
 	Session    uint64 `json:"session_id"`
 	Handle     uint64 `json:"sender"`
@@ -97,7 +97,7 @@ type EventMsg struct {
 
 type PluginData struct {
 	Plugin string
-	Data   map[string]interface{}
+	Data   json.RawMessage
 }
 
 type WebRTCUpMsg struct {
