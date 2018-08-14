@@ -18,6 +18,10 @@
 // channel of the related Handle and can be read from there.
 package janus
 
+import (
+	"encoding/json"
+)
+
 var msgtypes = map[string]func() interface{}{
 	"error":       func() interface{} { return &ErrorMsg{} },
 	"success":     func() interface{} { return &SuccessMsg{} },
